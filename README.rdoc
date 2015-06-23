@@ -1,0 +1,18 @@
+SNAP
+
+Photo album web app project.
+
+Class 8.3
+Create a new Rails project called "snap".
+Create an Album model that has a name attribute
+Create a Photo model that belongs to Album (give it description, filename attributes)
+Ensure you create correct database migrations and run rake db:migrate
+Using the Rails console, create 3 album objects, and a few photos for each.
+You can put some images in app/assets/images/ and store their filenames with your song objects
+Implement Album and Photos controllers for your application.
+
+Class 9.3
+Open or clone the snap app
+Create a branch to add this story: A Visitor can see how many times an image has been viewed so that they can ascertain popularity
+Have your code reviewed with a pull request
+Merge the branch

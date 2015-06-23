@@ -1,0 +1,18 @@
+<section class="photos">
+  <div class="container">
+    <div class="row">
+      <% @photos.each do |photo| %>
+        <div class="col-md-4 col-xs-12">
+          <%= link_to(image_tag(photo.image, width: '100%'), album_photos_path(photo.album), class: 'img-responsive') %>
+          <%= photo.description %>
+        </div>
+      <% end %>
+    </div>
+      <div class="col-md-6 col-xs-12">
+        <div class="new-photo">
+          <h2><%= link_to("Return to Albums List", albums_path) %></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

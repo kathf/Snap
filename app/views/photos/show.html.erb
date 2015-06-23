@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="row">
+    <h1><%= @photo.description %></h1>
+  </div>
+
+  <div class="row">
+    <%= image_tag @photo.image, class: "center-block img-responsive" %>
+    <div class="text-center">
+      <%= link_to 'Edit', edit_album_photo_path(@album, @photo), class: "btn" %>
+      <%= link_to 'Back', album_photos_path(@album), class: "btn" %>
+    </div>
+    <p>
+      <strong>Number of Views:</strong>
+      <%= @photo.views %>
+    </p>
+  </div>
+</div>
+
+<p>
+  <% if @photo.favourite? %>
+    <%= link_to "Unlike", favourite_album_photo_path(@album, @photo), method: :post %>
+  <% else %>
+    <%= link_to "Like", favourite_album_photo_path(@album, @photo), method: :post %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_album_photo_path(@album, @photo) %> |
+<%= link_to 'Back', album_photos_path(@album) %>

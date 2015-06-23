@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="row">
+    <h1>Listing Photos</h1>
+    <%= link_to 'New Photo', new_album_photo_path(@album), class: "btn pull-right" %>
+  </div>
+
+  <div class="row">
+
+    <% @photos.each do |photo| %>
+      <div class="col-sm-6 col-lg-4">
+        <%= link_to image_tag(photo.image, class: "img-responsive"), album_photo_path(@album, photo) %>
+        <p><%= photo.description %></p>
+        <p><%= link_to 'Edit', edit_album_photo_path(@album, photo), class: "btn btn-default" %></p>
+        <p><%= link_to 'Destroy', [@album, photo], class: "btn btn-default", method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
